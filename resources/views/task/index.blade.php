@@ -34,7 +34,7 @@
                     @foreach($tasks as $tarea)
                         
                         <tr class="hover:bg-gray-50">
-                            <td class="p-3 border-b">{{ $tarea->id_task }}</td>
+                            <td class="p-3 border-b">{{ $tarea->id }}</td>
                             <td class="p-3 border-b">{{ $tarea->name }}</td>
                             <td class="p-3 border-b">{{ $tarea->description }}</td>
                             
@@ -52,8 +52,7 @@
 
                                 <form action="{{ route('task.destroy', $tarea) }}" method="POST" class="inline">
                                     @csrf
-                                    @method('DELETE')
-                                    <button type="submit" onclick="return confirm('¿Eliminar esta tarea?')" class="text-red-600 hover:underline">
+                                    <button type="submit" onclick="return confirm('¿Eliminar la tarea #{{ $tarea->id }}?')" class="text-red-600 hover:underline">
                                         Eliminar
                                     </button>
                                 </form>
