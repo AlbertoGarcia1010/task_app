@@ -68,6 +68,7 @@ class TaskController extends Controller
 
     public function delete($id)
     {
+        // Borrado Fisico, pero podriamos hacer un borrado logico usando el campo status
         $task = TaskModel::find($id);
         $task->delete();
         return redirect('/task');
